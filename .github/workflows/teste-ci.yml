@@ -18,7 +18,18 @@ jobs:
         cache: 'npm'
     - name: Instalar Dependências
       run: npm install
+
     - name: Corrigir Vulnerabilidades
       run: npm audit fix
+
     - name: Executar Testes Cypress
       run: npm test
+
+    - name: Gerar Relatório Allure
+      run: npm run report:generate
+
+    - name: Publicar Relatório Allure
+      uses: peaceiris/actions-gh-pages@v4
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
