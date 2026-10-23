@@ -6,7 +6,7 @@
   "scripts": {
     "test": "npx cypress run --browser chrome",
     "report": "npx allure serve allure-results --clean",
-    "report:generate": "npx allure generate allure-results --clean --output allure-report"
+    "report:generate": "npx allure generate allure-results -o allure-report --clean"
   },
   "repository": {
     "type": "git",
